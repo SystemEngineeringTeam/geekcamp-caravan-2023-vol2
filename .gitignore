@@ -290,3 +290,4 @@ cython_debug/
 #.idea/
 
 .DS_Store
+graph/img/
