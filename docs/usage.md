@@ -3,14 +3,6 @@
 本アプリは **Mac専用アプリケーション** です.  
 Windows,Linux版 がありますが, ログは追加されますが、パソコンの操作はできません.デバッグもしてません.
 
-## ダウンロード方法
-[ダウンロードリンク](https://github.com/SystemEngineeringTeam/geekcamp-caravan-2023-vol2/releases) からダウンロードしてください.
-- MacOS: paper_app_0.0.3_x64.dmg
-- Windows: paper_app_0.0.3_x64-setup.exe
-- Linux(Debian): paper-app_0.0.3_amd64.deb
- 
-ダウンロード後, 開発者
-
 ## アプリの使い方
 ## 操作方法
 紙を破くことでパソコンを操作できます.  
