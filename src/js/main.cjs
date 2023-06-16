@@ -365,7 +365,7 @@ async function initSoundrecognize() {
 
 // 音声認識のモデルを作成
 async function createModel() {
-  const URL = "https://paper-sound-model.vercel.app/";
+  const URL = "https://gist.githubusercontent.com/SatooRu65536/681066f535759bc1c52f4c9ad5ca539b/raw/f26aa65cbb337f7af76c1f1de3698b53c554972c/";
   const checkpointURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
