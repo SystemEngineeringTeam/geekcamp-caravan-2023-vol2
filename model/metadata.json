@@ -1,0 +1,11 @@
+{
+    "tfjsSpeechCommandsVersion": "0.4.0",
+    "modelName": "TMv2",
+    "timeStamp": "2023-05-24T05:40:58.291Z",
+    "wordLabels": [
+        "breakShort",
+        "breakLong",
+        "turn",
+        "roll"
+    ]
+}
