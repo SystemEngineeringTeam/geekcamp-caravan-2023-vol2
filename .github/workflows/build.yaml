@@ -1,8 +1,11 @@
-name: "publish"
+name: "build and release"
 on:
   push:
     branches:
       - main
+    paths:
+      - "src/**"
+      - "src-tauri/**"
 
 jobs:
   publish-tauri:
