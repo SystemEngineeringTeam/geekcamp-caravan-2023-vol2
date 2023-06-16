@@ -1,0 +1,185 @@
+body {
+    overflow: hidden;
+}
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/mokume.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* メイン用紙 */
+
+.page-num {
+    font-family: initial;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    width: 100px;
+    border-bottom: #000000 solid 3px;
+}
+
+span#page-num {
+    font-size: 1rem;
+}
+
+.page-header {
+    position: absolute;
+    background-color: #000000;
+    width: calc(100% - 40px);
+    height: 3px;
+}
+
+.page-header:nth-of-type(2) {
+    top: 60px;
+}
+
+.page-header:nth-of-type(3) {
+    top: 100px;
+}
+
+.page-header:nth-of-type(3)::before {
+    content: attr(data-text);
+    font-size: 2.3rem;
+    position: absolute;
+    top: -2.9rem;
+    left: 10px;
+}
+
+.content {
+    width: 100%;
+    height: 470px;
+    margin-top: 90px;
+    padding-left: 20px;
+    font-size: 25px;
+    line-height: 25px;
+    white-space: pre-wrap;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 95%, #000000 95%);
+    background-size: 100% 25px;
+    background-position-y: -1px;
+}
+.content .time {
+    font-size: 15px;
+    line-height: 15px;
+    padding-right: 10px;
+}
+
+.stack {
+    width: 400px;
+    position: relative;
+    top: 30px;
+    left: 250px;
+    z-index: 100;
+}
+
+.sheet {
+    position: absolute;
+    transition: all 300ms ease-in-out;
+    display: block;
+    padding: 20px;
+    background: white;
+    width: 100%;
+    height: 600px;
+    left: 0;
+    overflow: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+
+/* 付箋 */
+
+.sticky-note {
+    width: 200px;
+    height: 200px;
+    background-color: #fdf44d;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    display: flex;
+    cursor: pointer;
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    z-index: 200;
+}
+
+.sticky-note img {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box p {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ステッカー */
+
+.raijin-sticker {
+    width: 200px;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    z-index: 100;
+}
+
+.fujin-sticker {
+    width: 200px;
+    position: absolute;
+    right: -70px;
+    bottom: 50px;
+    z-index: 100;
+}
+
+/* リボン */
+
+.ribbon {
+    width: 1000px;
+    height: 40px;
+    position: fixed;
+    left: -50px;
+    z-index: 50;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+}
+
+.ribbon-1 {
+    background-color: #ef8bf9;
+    top: 300px;
+    rotate: 15deg;
+}
+
+.ribbon-2 {
+    background-color: #a6fbc0;
+    top: 160px;
+    rotate: -20deg;
+}
+
+.ribbon-3 {
+    background-color: #ffef41;
+    bottom: 50px;
+    rotate: -15deg;
+}
+
+.ribbon-4 {
+    background-color: #bffdfe;
+    bottom: 50px;
+    rotate: 15deg;
+}

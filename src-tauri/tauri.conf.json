@@ -1,0 +1,59 @@
+{
+  "build": {
+    "beforeDevCommand": "yarn build",
+    "beforeBuildCommand": "yarn build",
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "paper_app",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "path": {
+        "all": true
+      },
+      "shell": {
+        "all": true,
+        "execute": true,
+        "open": true,
+        "sidecar": true,
+        "scope": [
+          {
+            "name": "run-osascript",
+            "cmd": "osascript",
+            "args": true
+          }
+        ]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": ["osa/*"],
+      "identifier": "me.satooru.paper-app",
+      "targets": "all"
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": false,
+        "title": "かみあぷり",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+}
