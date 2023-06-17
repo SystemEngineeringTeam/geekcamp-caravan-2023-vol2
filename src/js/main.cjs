@@ -332,7 +332,7 @@ async function initSoundrecognize() {
       const scoresAvg = resScores.reduce((a, b) => a + b) / resScores.length;
       // counter に true が含まれているか
       const isCounterTrue = counter.includes(true);
-      console.log(score);
+      console.log(score, scoreNoise);
 
       const scoreNoiseEle = document.getElementById("score-noise");
       const scoreBreakEle = document.getElementById("score-break");
@@ -371,7 +371,7 @@ async function initSoundrecognize() {
 // 音声認識のモデルを作成
 async function createModel() {
   const URL =
-    "https://gist.githubusercontent.com/SatooRu65536/681066f535759bc1c52f4c9ad5ca539b/raw/f26aa65cbb337f7af76c1f1de3698b53c554972c/";
+    "https://gist.githubusercontent.com/SatooRu65536/681066f535759bc1c52f4c9ad5ca539b/raw/040384c51bcd0b357959718dcbe7ed706f3d2369/";
   const checkpointURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
