@@ -251,7 +251,7 @@ async function writeLog(log) {
   nowLine++;
 
   let delay = 0;
-  if (nowLine == 18) {
+  if (nowLine == 19) {
     delay = 300;
     nowLine = 1;
     stack.next();
