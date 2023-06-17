@@ -276,7 +276,7 @@ async function writeLog(log) {
 function initSetting() {
   const stickyContainer = document.getElementById("sticky-note-container");
 
-  const motion = motions["break"];
+  const motion = motions.break;
   motion.exeId = executesIds[0];
   const exeText = executes[motion.exeId].text;
 
@@ -298,10 +298,8 @@ function changeExecute(sticky, motion) {
 }
 
 // スライドを操作する
-async function executeToSlide(motionId) {
-  if (!motions[motionId]) return;
-
-  const exeId = motions[motionId].exeId;
+async function executeToSlide() {
+  const exeId = motions.break.exeId;
   if (exeId == "none") return;
 
   const exeTexts = executes[exeId].text;
@@ -325,6 +323,7 @@ async function initSoundrecognize() {
   recognizer.listen(
     (result) => {
       const score = result.scores[0];
+      const scoreNoise = result.scores[3];
       resScores.push(score);
       resScores.shift();
       counter.shift();
@@ -333,7 +332,13 @@ async function initSoundrecognize() {
       const scoresAvg = resScores.reduce((a, b) => a + b) / resScores.length;
       // counter に true が含まれているか
       const isCounterTrue = counter.includes(true);
-      console.log(score.toFixed(2), scoresAvg.toFixed(2));
+      console.log(score);
+
+      const scoreNoiseEle = document.getElementById("score-noise");
+      const scoreBreakEle = document.getElementById("score-break");
+
+      scoreNoiseEle.style.height = `${(1 - scoreNoise) * 100}%`;
+      scoreBreakEle.style.height = `${(1 - score) * 100}%`;
 
       // ここから判定
       if (scoresAvg >= 0.9) {
@@ -343,7 +348,7 @@ async function initSoundrecognize() {
         if (!isBreakMiddle && !isCounterTrue) {
           console.info("破きはじめた");
           isBreakMiddle = true;
-          executeToSlide(classLabels[0]);
+          executeToSlide();
         }
       } else {
         counter.push(false);
@@ -365,7 +370,8 @@ async function initSoundrecognize() {
 
 // 音声認識のモデルを作成
 async function createModel() {
-  const URL = "https://gist.githubusercontent.com/SatooRu65536/681066f535759bc1c52f4c9ad5ca539b/raw/f26aa65cbb337f7af76c1f1de3698b53c554972c/";
+  const URL =
+    "https://gist.githubusercontent.com/SatooRu65536/681066f535759bc1c52f4c9ad5ca539b/raw/f26aa65cbb337f7af76c1f1de3698b53c554972c/";
   const checkpointURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
