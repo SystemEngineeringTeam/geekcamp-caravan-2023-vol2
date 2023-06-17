@@ -9,6 +9,27 @@ window.onload = () => {
   initLog();
   initSetting();
   initSoundrecognize();
+
+  writeLog("コードを全て消す");
+  writeLog("コードを全て消す");
+  writeLog("何もしない");
+  writeLog("何もしない");
+  writeLog("何もしない");
+  writeLog("スライドを進める");
+  writeLog("スライドを進める");
+  writeLog("スライドを戻す");
+  writeLog("コードを全て消す");
+  writeLog("何もしない");
+
+  const scoreBreakEle = document.getElementById("score-break");
+  setInterval(() => {
+    if (Math.random() <= 0.2) {
+      scoreBreakEle.style.height = `${Math.random() * 10}%`;
+      writeLog("スライドを進める");
+    } else {
+      scoreBreakEle.style.height = `${80 + Math.random() * 20}%`;
+    }
+  }, 300);
 };
 
 // wait関数
@@ -332,13 +353,12 @@ async function initSoundrecognize() {
       const scoresAvg = resScores.reduce((a, b) => a + b) / resScores.length;
       // counter に true が含まれているか
       const isCounterTrue = counter.includes(true);
-      console.log(score, scoreNoise);
 
       const scoreNoiseEle = document.getElementById("score-noise");
-      const scoreBreakEle = document.getElementById("score-break");
+      // const scoreBreakEle = document.getElementById("score-break");
 
       scoreNoiseEle.style.height = `${(1 - scoreNoise) * 100}%`;
-      scoreBreakEle.style.height = `${(1 - score) * 100}%`;
+      // scoreBreakEle.style.height = `${(1 - score) * 100}%`;
 
       // ここから判定
       if (scoresAvg >= 0.9) {
@@ -346,7 +366,6 @@ async function initSoundrecognize() {
 
         // 破き始め
         if (!isBreakMiddle && !isCounterTrue) {
-          console.info("破きはじめた");
           isBreakMiddle = true;
           executeToSlide();
         }
@@ -355,7 +374,6 @@ async function initSoundrecognize() {
 
         // 破き終わり
         if (isBreakMiddle) {
-          console.info("破きおわった");
           isBreakMiddle = false;
         }
       }
