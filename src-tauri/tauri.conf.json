@@ -28,6 +28,9 @@
             "args": true
           }
         ]
+      },
+      "window": {
+        "startDragging": true
       }
     },
     "bundle": {
@@ -50,9 +53,10 @@
       {
         "fullscreen": false,
         "resizable": false,
-        "title": "かみあぷり",
-        "width": 800,
-        "height": 640
+        "hiddenTitle": true,
+        "width": 840,
+        "height": 600,
+        "titleBarStyle": "Overlay"
       }
     ]
   }

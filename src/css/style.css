@@ -2,6 +2,21 @@ body {
     overflow: hidden;
 }
 
+/* タイトルバー */
+.titlebar {
+    height: 30px;
+    user-select: none;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+}
+
+/* 背景 */
 .bg {
     width: 100vw;
     height: 100vh;
@@ -17,9 +32,10 @@ body {
 /* スコア */
 
 .score {
-    position: fixed;
     width: 20px;
     background-image: linear-gradient(180deg, rgba(232, 128, 128, 1), rgba(229, 255, 0, 1) 80%, rgb(130, 204, 51));
+    position: fixed;
+    right: 0;
     top: 0;
     bottom: 0;
     z-index: 1000;
@@ -27,7 +43,7 @@ body {
 }
 
 .score:nth-of-type(2) {
-    left: 20px;
+    right: 20px;
 }
 
 .score>div {
@@ -101,7 +117,7 @@ span#page-num {
     width: 400px;
     position: relative;
     top: 30px;
-    left: 290px;
+    left: 230px;
     z-index: 100;
 }
 
@@ -130,7 +146,7 @@ span#page-num {
     cursor: pointer;
     position: fixed;
     bottom: 100px;
-    left: 60px;
+    left: 10px;
     z-index: 200;
 }
 
@@ -160,7 +176,7 @@ span#page-num {
 /* ステッカー */
 
 .raijin-sticker {
-    width: 200px;
+    width: 230px;
     position: absolute;
     left: 50px;
     top: 20px;
@@ -168,9 +184,9 @@ span#page-num {
 }
 
 .fujin-sticker {
-    width: 170px;
+    width: 150px;
     position: absolute;
-    right: -70px;
+    right: 20px;
     bottom: 50px;
     z-index: 100;
     rotate: 10deg;
