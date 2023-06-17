@@ -323,7 +323,7 @@ async function initSoundrecognize() {
   recognizer.listen(
     (result) => {
       const score = result.scores[0];
-      const scoreNoise = result.scores[3];
+      const scoreNoise = result.scores[2];
       resScores.push(score);
       resScores.shift();
       counter.shift();
